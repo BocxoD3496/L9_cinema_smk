@@ -7,7 +7,7 @@ checkLogin();
 // Database connection and fetching movies
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "cinema";
 
 
