@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'header.php';
+include '../additional/header.php';
 
 $postUser = getPostUser($connection);
 
@@ -19,7 +19,7 @@ if (isset($_POST['updateid']) && $_POST['updateid'] > 0) {
   <div class="hero-body">
     <div class="content has-text-centered">
       <h1 class="index-title">Кинотеатр "Cinema"</h1>
-      <h2 class="subtitle"><a href="tickets.php">Купить билет</a></h2>
+      <h2 class="subtitle"><a href="../pages/tickets.php">Купить билет</a></h2>
     </div>
   </div>
 </section>
@@ -27,10 +27,10 @@ if (isset($_POST['updateid']) && $_POST['updateid'] > 0) {
   <div class="hero-body">
     <div class="container">
       <div class="content has-text-centered">
-        <h1 class="title">Отзывы</h1>
+        <h1 class="title">Новости</h1>
         <?php
         if (isset($_SESSION['loggedin']) && $_SESSION['userGroup'] === 1 || $_SESSION['userGroup'] === 0) { ?>
-          <a href="post-new.php"><button class="button is-medium">Создайте новый отзыв</button></a>
+          <a href="post-new.php"><button class="button is-medium">Создайте новость сейчас</button></a>
         <?php } ?>
         <hr>
         <?php while ($row = mysqli_fetch_array($postUser)) { ?>
@@ -61,4 +61,4 @@ if (isset($_POST['updateid']) && $_POST['updateid'] > 0) {
   </div>
 </section>
 
-<?php include 'footer.php' ?>
+<?php include '../additional/footer.php' ?>

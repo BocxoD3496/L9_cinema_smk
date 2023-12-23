@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'header.php';
+include '../additional/header.php';
 checkLogin();
 
 // Database connection and fetching movies
@@ -11,7 +11,7 @@ $password = "";
 $dbname = "cinema";
 
 
-require_once 'includes/functions.php';
+require_once '../includes/functions.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -107,11 +107,11 @@ function getSeatStatus($connection, $row, $seatNumber)
     <p>Общая стоимость: <span id='total'>0</span>₽</p>
   </div>
 
-  <script src="script.js"></script>
+  <script src="../scripts/script.js"></script>
 
 </body>
 
 
 </html>
 
-<?php include 'footer.php'; ?>
+<?php include '../additional/footer.php'; ?>

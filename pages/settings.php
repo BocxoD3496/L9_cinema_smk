@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'header.php';
+include '../additional/header.php';
 
 checkLogin();
 
@@ -63,8 +63,8 @@ $page = "settings";
           </div>
           <div class='box' style='border-radius: 0px;'>
             <ul class="profile-menu">
-              <li class="<?php echo ($page == "profile" ? "active" : "") ?>"><a href="profile.php">My Profile</a></li>
-              <li class="<?php echo ($page == "settings" ? "active" : "") ?>"><a href="settings.php">Settings</a></li>
+              <li class="<?php echo ($page == "profile" ? "active" : "") ?>"><a href="profile.php">Мой профиль</a></li>
+              <li class="<?php echo ($page == "settings" ? "active" : "") ?>"><a href="settings.php">Настройки</a></li>
             </ul><br>
             <h3 class="title">Настройки</h3>
             <p class="subtitle">Изменить ваш пароль, картинку пользователя или информацию.</p>
@@ -74,8 +74,8 @@ $page = "settings";
                 <div class="field <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
                   <label class="label">Новый пароль</label>
                   <div class="control has-icons-left">
-                    <input class="input is-medium" type="username" name="new_password" placeholder="New Password"
-                      value="<?php echo $new_password; ?>">
+                    <input class="input is-medium" type="username" name="new_password"
+                      placeholder="Введите новый пароль" value="<?php echo $new_password; ?>">
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
                     </span>
@@ -88,7 +88,7 @@ $page = "settings";
                   <label class="label">Подтвердить пароль</label>
                   <div class="control has-icons-left">
                     <input class="input is-medium" type="password" name="confirm_password"
-                      placeholder="Confirm Password">
+                      placeholder="Подтвердите введеный пароль">
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
                     </span>
@@ -106,7 +106,8 @@ $page = "settings";
                 <div class="field <?php echo (!empty($info_err)) ? 'has-error' : ''; ?>">
                   <label class="label">About</label>
                   <div class="control has-icons-left">
-                    <textarea class="textarea is-medium" type="username" name="info" placeholder="Your Information..."
+                    <textarea class="textarea is-medium" type="username" name="info"
+                      placeholder="Введите информацию о себе"
                       value="<?php echo $info; ?>"><?php echo $info; ?></textarea>
                     <span class="help is-danger">
                       <?php echo $info_err; ?>
@@ -124,4 +125,4 @@ $page = "settings";
   </div>
 </section>
 
-<?php include 'footer.php' ?>
+<?php include '../additional/footer.php' ?>

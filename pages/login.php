@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'includes/config.php';
-require 'includes/functions.php';
+require '../includes/config.php';
+require '../includes/functions.php';
 
 $username = $password = "";
 $username_err = $password_err = "";
@@ -60,7 +60,7 @@ if (isset($_POST['isuser']) && $_POST['isuser'] == 1) {
               </div>
               <input class="button is-fullwidth is-medium" type="submit" name="submit" value="Войти">
               <br>
-              <p>Вы хотите создать аккаунт? <a class="darklink" href="register.php">Зарегистрироваться</a>.</p>
+              <p>Вы хотите создать аккаунт? <a class="darklink" href="../pages/register.php">Зарегистрироваться</a>.</p>
             </form>
           </div>
         </div>

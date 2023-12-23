@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'includes/config.php';
+require '../includes/config.php';
 unset($_SESSION['status']);
 
 session_destroy();
@@ -12,7 +12,7 @@ session_destroy();
 
 <head>
   <meta charset="utf-8">
-  <title>Выход из аккаунта | CinemaPark</title>
+  <title>Выход из аккаунта | Cinema</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -26,7 +26,8 @@ session_destroy();
         <div class="column ">
           <div class="box">
             <h3 class="title">Выход из аккаунта</h3>
-            <p class="subtitle">Вы вышли из аккаунта. <a class="darklink" href="index.php">Вернуться на начальную
+            <p class="subtitle">Вы вышли из аккаунта. <a class="darklink" href="../pages/index.php">Вернуться на
+                начальную
                 страницу.</a></p>
           </div>
         </div>

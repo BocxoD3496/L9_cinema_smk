@@ -9,7 +9,7 @@
     </p>
   </div>
   </body>
-  <script src="jq/jquery-3.2.0.min.js"></script>
+  <script src="../jq/jquery-3.2.0.min.js"></script>
 
   <script>
     $(document).on('click', '.menu-mob', function () {

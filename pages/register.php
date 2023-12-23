@@ -1,6 +1,6 @@
 <?php
-require 'includes/config.php';
-require 'includes/functions.php';
+require '../includes/config.php';
+require '../includes/functions.php';
 
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -36,7 +36,8 @@ register($connection);
                             <div class="field <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                                 <label class="label">Логин</label>
                                 <div class="control has-icons-left">
-                                    <input type="text" class="input is-medium" name="username" value="<?php echo $username; ?>" placeholder="Логин" required>
+                                    <input type="text" class="input is-medium" name="username"
+                                        value="<?php echo $username; ?>" placeholder="Логин" required>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -48,7 +49,8 @@ register($connection);
                             <div class="field <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                                 <label class="label">Пароль</label>
                                 <div class="control has-icons-left">
-                                    <input type="password" class="input is-medium" name="password" value="<?php echo $password; ?>" placeholder="Пароль" required>
+                                    <input type="password" class="input is-medium" name="password"
+                                        value="<?php echo $password; ?>" placeholder="Пароль" required>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-lock"></i>
                                     </span>
@@ -60,7 +62,9 @@ register($connection);
                             <div class="field <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                                 <label class="label">Подтвердите пароль</label>
                                 <div class="control has-icons-left">
-                                    <input type="password" class="input is-medium" name="confirm_password" value="<?php echo $confirm_password; ?>" placeholder="Подтвердите пароль" required>
+                                    <input type="password" class="input is-medium" name="confirm_password"
+                                        value="<?php echo $confirm_password; ?>" placeholder="Подтвердите пароль"
+                                        required>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-lock"></i>
                                     </span>
@@ -72,7 +76,7 @@ register($connection);
                             <input type="submit" class="button is-medium" value="Подтвердить">
                             <input type="reset" class="button is-medium" value="Сбросить">
                             <br><br>
-                            <p>Уже есть аккаунт? <a class="darklink" href="login.php">Войти в аккаунт</a>.</p>
+                            <p>Уже есть аккаунт? <a class="darklink" href="../pages/login.php">Войти в аккаунт</a>.</p>
                         </form>
                     </div>
                 </div>

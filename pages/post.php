@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'header.php';
+include '../additional/header.php';
 
 if (isset($_GET['id']) && $_GET['id'] > 0) {
   $postData = getPostInfo($connection, $_GET['id']);
@@ -27,4 +27,4 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
   </div>
 </section>
 
-<?php include 'footer.php' ?>
+<?php include '../additional/footer.php' ?>

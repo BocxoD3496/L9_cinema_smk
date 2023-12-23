@@ -16,18 +16,6 @@ body {
     color: #fff;
 }
 
-.herobg {
-    background-image: url('img/bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.curtain {
-    background-image: url('img/redbg.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-}
 
 .content h1 {
     color: #663399;
@@ -224,7 +212,7 @@ a.navbar-item:hover {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #af0f0f;
+    background-color: #663399;
 }
 
 .profile-menu li {
@@ -278,7 +266,7 @@ a.navbar-item:hover {
     background-color: #F1F1F1;
 }
 
-/* FOOTER STYLING */
+
 .footer {
     background-color: #0e0f0f;
     color: white;
@@ -341,18 +329,14 @@ print .column.is-offset-4,
 .movie-container {
     margin: 20px auto;
     text-align: center;
-    /* Центрирование текста и элементов формы */
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
-    /* Центрирование контейнера */
     display: flex;
-    /* Добавим свойство flex для работы align-items */
     flex-direction: column;
     align-items: center;
-    /* Центрирование содержимого по горизонтали */
 }
 
 .seat {

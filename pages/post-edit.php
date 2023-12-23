@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'header.php';
+include '../additional/header.php';
 
 checkAdmin();
 
@@ -21,10 +21,10 @@ if (isset($_POST['updateid']) && $_POST['updateid'] > 0) {
       <div class="columns is-centered">
         <div class="column booking-col">
           <p class="title">
-            Изменить отзыв '
+            Изменить новость '
             <?php echo $customerData['postTitle']; ?>'
           </p>
-          <a class="darklink" href="index.php">Вернуться</a>
+          <a class="darklink" href="../pages/index.php">Вернуться</a>
           <br><br>
           <form action="post-edit.php" method="post">
             <input type="hidden" name="updateid" value="<?php echo $customerData['postID']; ?>">
@@ -40,7 +40,7 @@ if (isset($_POST['updateid']) && $_POST['updateid'] > 0) {
             </div>
             <div class="field">
               <label class="label">Текст:</label>
-              <textarea class="textarea" rows="12" placeholder="Your text.."
+              <textarea class="textarea" rows="12" placeholder="Введите новость"
                 name="postComment"><?php echo $customerData['postComment']; ?></textarea>
             </div>
             <input style="margin-top: 20px;" class="button is-medium" type="submit" value="Сохранить изменения">
@@ -51,4 +51,4 @@ if (isset($_POST['updateid']) && $_POST['updateid'] > 0) {
   </div>
 </section>
 
-<?php include 'footer.php' ?>
+<?php include '../additional/footer.php' ?>

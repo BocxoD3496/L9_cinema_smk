@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-include 'header.php';
+include '../additional/header.php';
 
-checkLogin();
+checkAdmin();
 
 if (isset($_POST['isnew']) && $_POST['isnew'] == 1) {
   $saveCustomer = savePost($connection);
@@ -17,23 +17,24 @@ if (isset($_POST['isnew']) && $_POST['isnew'] == 1) {
       <div class="columns is-centered">
         <div class="column booking-col">
           <p class="title">
-            Создать новый отзыв
+            Создать новость
           </p>
-          <a class="darklink" href="index.php">Вернуться</a>
+          <a class="darklink" href="../pages/index.php">Вернуться</a>
           <br><br>
           <form action="post-new.php" method="post">
             <input type="hidden" name="isnew" id="isnew" value="1">
             <div class="field">
               <label class="label">Краткое название:</label>
               <div class="control has-icons-left">
-                <input class="input is-medium" type="text" name="postTitle" placeholder="Введите краткое название отзыва">
+                <input class="input is-medium" type="text" name="postTitle"
+                  placeholder="Введите краткое название новости">
                 <span class=" icon is-small is-left">
-                <i class="fas fa-pen"></i>
+                  <i class="fas fa-pen"></i>
                 </span>
               </div>
             </div>
             <label class="label">Текст:</label>
-            <textarea class="textarea" rows="12" name="postComment" placeholder="Текст вашего отзыва"></textarea></p>
+            <textarea class="textarea" rows="12" name="postComment" placeholder="Текст новости"></textarea></p>
             <p><input style="margin-top: 20px;" class="button is-medium" type="submit" value="Сохранить">
           </form>
         </div>
@@ -42,4 +43,4 @@ if (isset($_POST['isnew']) && $_POST['isnew'] == 1) {
   </div>
 </section>
 
-<?php include 'footer.php' ?>
+<?php include '../additional/footer.php' ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'header.php';
+include '../additional/header.php';
 
 checkLogin();
 
@@ -60,23 +60,23 @@ $page = "profile";
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Очки пользователя</p>
-                  <p class="title">240</p>
+                  <p class="title">168</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading">Билеты (2023)</p>
-                  <p class="title">12</p>
+                  <p class="heading">Купленные билеты</p>
+                  <p class="title">3</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Любимый фильм</p>
-                  <p class="title">8</p>
+                  <p class="title">Oppenheimer</p>
                 </div>
               </div>
             </nav>
-            <h1 class="title" style="text-align: center">Уровень аккаунта: 4</h1>
+            <h1 class="title" style="text-align: center">Уровень аккаунта: 2</h1>
           </div>
         </div>
       </div>
@@ -84,4 +84,4 @@ $page = "profile";
   </div>
 </section>
 
-<?php include 'footer.php' ?>
+<?php include '../additional/footer.php' ?>

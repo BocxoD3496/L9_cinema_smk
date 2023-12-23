@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'header.php';
+include '../additional/header.php';
 
 checkAdmin();
 
@@ -26,11 +26,11 @@ if (isset($_POST['isdeleteid']) && $_POST['isdeleteid'] > 0) {
             <input class="button is-large" type="submit" value="Удалить">
           </form>
           <br>
-          <a href="index.php">Вернуться на начальную страницу</a>
+          <a href="../pages/index.php">Вернуться на начальную страницу</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<?php include 'footer.php' ?>
+<?php include '../additional/footer.php' ?>
