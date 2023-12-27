@@ -1,35 +1,40 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cinema";
+// Подключение к базе данных
+$host = 'localhost'; // или ваш хост
+$username = 'root'; // ваше имя пользователя базы данных
+$password = 'root'; // ваш пароль к базе данных
+$database = 'cinema'; // название вашей базы данных
 
-// Создание соединения
-$conn = new mysqli($servername, $username, $password, $dbname);
+//checklogin();
 
-// Проверка соединения
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+$connection = new mysqli($host, $username, $password, $database);
+if ($connection->connect_error) {
+    die("Ошибка подключения: " . $connection->connect_error);
 }
 
-$input = json_decode(file_get_contents('php://input'), true);
-$movieId = $input['movieId'];
-$rating = $input['rating'];
-$userId = $_SESSION['userId']; // Пример использования идентификатора пользователя из сессии
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $data = json_decode(file_get_contents('php://input'), true);
+    $movieId = $data['movieId'];
+    $rating = $data['rating'];
 
-// Запрос на добавление оценки
-$sql = "INSERT INTO movie_ratings (movieID, userID, rating) VALUES (?, ?, ?)";
+    $stmt = $connection->prepare("INSERT INTO movie_ratings (movieID, rating) VALUES (?, ?)");
+    if ($stmt === false) {
+        die("Ошибка подготовки запроса: " . htmlspecialchars($connection->error));
+    }
 
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("iii", $movieId, $userId, $rating);
-$stmt->execute();
+    $stmt->bind_param("ii", $movieId, $rating);
+    if (!$stmt->execute()) {
+        die("Ошибка выполнения запроса: " . htmlspecialchars($stmt->error));
+    }
 
-if ($stmt->error) {
-    echo "Error: " . $stmt->error;
-} else {
-    echo "Rating added successfully";
+    $averageStmt = $connection->prepare("SELECT AVG(rating) as averageRating FROM movie_ratings WHERE movieID = ?");
+    $averageStmt->bind_param("i", $movieId);
+    $averageStmt->execute();
+    $result = $averageStmt->get_result();
+    $row = $result->fetch_assoc();
+
+    echo json_encode(['averageRating' => round($row['averageRating'], 1)]);
 }
 
-$stmt->close();
-$conn->close();
+$connection->close();
 ?>

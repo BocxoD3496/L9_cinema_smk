@@ -3,7 +3,7 @@ session_start();
 
 include '../additional/header.php';
 
-checkAdmin();
+checkLogin();
 
 if (isset($_POST['isnew']) && $_POST['isnew'] == 1) {
   $saveCustomer = savePost($connection);

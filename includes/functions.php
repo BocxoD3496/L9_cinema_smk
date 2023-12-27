@@ -18,21 +18,21 @@ function checkAdmin()
 function checkUserGroup()
 {
     if ($_SESSION['userGroup'] === 0) {  ?>
-      <p class='stat-val' style="color: #cd7f32;">Бронзовый</p>
-      <p class='stat-key'>Участник</p>
-    <?php
+<p class='stat-val' style="color: #cd7f32;">Бронзовый</p>
+<p class='stat-key'>Участник</p>
+<?php
     } elseif ($_SESSION['userGroup'] === 1) {  ?>
-      <p class='stat-val' style="color: #af0f0f;">Персонал</p>
-      <p class='stat-key'>Администратор</p>
-    <?php
+<p class='stat-val' style="color: #af0f0f;">Персонал</p>
+<p class='stat-key'>Администратор</p>
+<?php
     } elseif ($_SESSION['userGroup'] === 2) { ?>
-      <p class='stat-val' style="color: silver;">Серебряный</p>
-      <p class='stat-key'>Участник</p>
-    <?php
+<p class='stat-val' style="color: silver;">Серебряный</p>
+<p class='stat-key'>Участник</p>
+<?php
     } elseif ($_SESSION['userGroup'] === 3) {  ?>
-      <p class='stat-val' style="color: gold;">Золотой</p>
-      <p class='stat-key'>Участник</p>
-    <?php }
+<p class='stat-val' style="color: gold;">Золотой</p>
+<p class='stat-key'>Участник</p>
+<?php }
 }
 
 function getMovies($conn)
@@ -138,6 +138,8 @@ function escapeInsert($conn, $insert)
 
 function register($connection)
 {
+    global $username, $password, $confirm_password;
+    global $username_err, $password_err, $confirm_password_err;
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (empty(trim($_POST["username"]))) {
           $username_err = "Please enter a username.";
@@ -149,7 +151,7 @@ function register($connection)
               if (mysqli_stmt_execute($stmt)) {
                   mysqli_stmt_store_result($stmt);
                   if (mysqli_stmt_num_rows($stmt) == 1) {
-                      $username_err = "This username is already taken.";
+                      $username_err = "Этот логин уже используется.";
                   } else {
                       $username = trim($_POST["username"]);
                   }

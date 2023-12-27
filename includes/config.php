@@ -3,7 +3,7 @@ $connection = dbConnect();
 
 function dbConnect()
 {
-    $connection = mysqli_connect("localhost", "root", "", "cinema")
+    $connection = mysqli_connect("localhost", "root", "root", "cinema")
         or die("Could not connect");
     mysqli_select_db($connection, "cinema") or die("Could not select database");
     return $connection;
